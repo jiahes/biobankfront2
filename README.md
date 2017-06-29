@@ -1,6 +1,6 @@
 # biobankfront
 
-> 样本库管理系统前端页面222233333
+> 样本库管理系统前端页面2222333335555
 > 所用技术：vue adminlte bootstrap jquery bootstrap-table
 
 ## Build Setup
