@@ -1,0 +1,14 @@
+.my-content-wrapper{
+  position: relative;
+}
+.my-content-wrapper .my-content{
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.my-content-wrapper .my-content iframe{
+  width: 100%;
+  height: 100%;
+}
