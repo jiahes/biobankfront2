@@ -10,6 +10,7 @@ import Send from '@/components/in/Send'
 import Accept from '@/components/in/Accept'
 import Handle from '@/components/in/Handle'
 import Save from '@/components/in/Save'
+import RegisterNew from '@/components/in/RegisterNew'
 
 Vue.use(Router)
 
@@ -57,6 +58,10 @@ export default new Router({
         {
           path: 'save',
           component: Save
+        },
+        {
+          path: 'registerNew',
+          component: RegisterNew
         }
       ]
     }
