@@ -6,16 +6,23 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//全局引入bootstrap以及adminlte的样式文件
 require("./assets/libs/bootstrap/css/bootstrap.min.css")
 require("./assets/libs/adminlte/css/AdminLTE.min.css")
 require("./assets/libs/adminlte/css/skins/skin-blue.css")
 
+//全局引入bootstrap的js文件
 require("./assets/libs/bootstrap/js/bootstrap.min.js")
 require("./assets/libs/adminlte/js/app.js")
 
-
+//全局引入自定义的comomon的样式以及js文件
 require("./css/common.css")
 require("./js/common.js")
+
+// 全局引入bootstrap-table的样式以及.js文件
+require("./assets/libs/bootstrap-table/bootstrap-table.min.css")
+require("./assets/libs/bootstrap-table/bootstrap-table.min.js")
+require("./assets/libs/bootstrap-table/bootstrap-table-zh-CN.min.js")
 
 
 Vue.config.productionTip = false

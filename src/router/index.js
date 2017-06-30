@@ -41,6 +41,10 @@ export default new Router({
       component: In,
       children: [
         {
+          path: '',
+          component: Register
+        },
+        {
           path: 'register',
           component: Register
         },
