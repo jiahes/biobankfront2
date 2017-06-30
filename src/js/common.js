@@ -1,2 +1,1 @@
-console.log("common.js");
-$.jin = 'asdf';
+window.commonUrl = "http://localhost:8080/";

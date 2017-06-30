@@ -3,8 +3,8 @@
     <div class="menu-box" style="background-color: #222d32">
       <ul class="sidebar-menu">
         <li class="header">入库步骤</li>
-        <li v-for="step in steps">
-          <a :href="step.url">
+        <li v-for="(step,index) in steps" :class="step.className">
+          <a :href="step.url" @click="stepF(index);">
             <i class="fa fa-circle-o text-red"></i> 
             <span>{{step.text}}</span>
           </a>
@@ -25,29 +25,44 @@ export default {
       steps: [
         {
           text: '登记',
-          url: '#in/register'
+          url: '#in/register',
+          className: 'active'
         },
         {
           text: '采样',
-          url: '#in/sampling'
+          url: '#in/sampling',
+          className: ''
         },
         {
           text: '送存',
-          url: '#in/send'
+          url: '#in/send',
+          className: ''
         },
         {
           text: '接受',
-          url: '#in/accept'
+          url: '#in/accept',
+          className: ''
         },
         {
           text: '处理',
-          url: '#in/handle'
+          url: '#in/handle',
+          className: ''
         },
         {
           text: '入库',
-          url: '#in/save'
+          url: '#in/save',
+          className: ''
         }
       ]
+    }
+  },
+  methods: {
+    stepF: function(index) {
+      console.log(index);
+      for(let i = 0; i < this.steps.length; i++) {
+        this.steps[i].className = "";
+      }
+      this.steps[index].className = "active";
     }
   }
 }
