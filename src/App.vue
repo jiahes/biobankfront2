@@ -108,6 +108,14 @@ export default {
         {
           text: '项目配置',
           url: '/ss'
+        },
+        {
+          text: '出库管理',
+          url: '#out'
+        },
+        {
+          text: '系统管理',
+          url: '#system'
         }
       ]
     }

@@ -3,14 +3,23 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Index from '@/components/Index'
 import In from '@/components/In'
+import Out from '@/components/Out'
+import Book from '@/components/out/Book'
+import Definite from '@/components/out/Definite'
+import Inquiry from '@/components/out/Inquiry'
+import Requiry from '@/components/out/Requiry'
 import Platform from '@/components/Platform'
 import Register from '@/components/in/Register'
 import Sampling from '@/components/in/Sampling'
 import Send from '@/components/in/Send'
+import Save from '@/components/in/Save'
 import Accept from '@/components/in/Accept'
 import Handle from '@/components/in/Handle'
-import Save from '@/components/in/Save'
 import RegisterNew from '@/components/in/RegisterNew'
+import System from '@/components/System'
+import User from '@/components/system/User'
+import Role from '@/components/system/Role'
+import Authority from '@/components/system/Authority'
 
 Vue.use(Router)
 
@@ -70,6 +79,48 @@ export default new Router({
       path: '/platform',
       name: 'Platform',
       component: Platform
-    }
+    },
+    {
+        path: '/out',
+        name: 'out',
+        component: Out,
+        children: [
+          {
+            path: 'book',
+            component:Book
+          },
+          {
+            path: 'definite',
+            component: Definite
+          },
+          {
+            path: 'inquiry',
+            component: Inquiry
+          },
+          {
+              path: 'requiry',
+              component: Requiry
+          }
+        ]
+      },
+      {
+          path: '/system',
+          name: 'system',
+          component: System,
+          children: [
+            {
+              path: 'user',
+              component: User
+            },
+            {
+              path: 'role',
+              component:Role
+            },
+            {
+              path: 'authority',
+              component: Authority
+            }
+          ]
+        }
   ]
 })
