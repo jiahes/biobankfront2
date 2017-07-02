@@ -11,7 +11,7 @@
         </li>
       </ul>
     </div>
-    <div class="">
+    <div class="content-tables">
       <router-view></router-view>
     </div>
   </div>
@@ -78,10 +78,17 @@ export default {
     right: 0;
   }
   .menu-box{
-    width: 200px;
+    width: 100px;
     position: absolute;
     top: 0px;
     bottom: 0;
     background-color: #222d32;
+  }
+  .content-tables{
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: 0;
+    right: 0;
   }
 </style>

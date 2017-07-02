@@ -209,7 +209,9 @@ export default {
   },
   methods: {
     goNew() {
-        this.$router.push('registerNew');
+        this.$router.push({
+            path: 'registerNew'
+        });
     },
     openByDrop3(e){
             this.calendar3.show=true;
@@ -245,7 +247,7 @@ export default {
 <style scoped>
   .register{
     position: absolute;
-    left: 200px;
+    left: 0px;
     right: 0;
     top: 0;
     bottom: 0;

@@ -16,6 +16,10 @@ import Save from '@/components/in/Save'
 import Accept from '@/components/in/Accept'
 import Handle from '@/components/in/Handle'
 import RegisterNew from '@/components/in/RegisterNew'
+import AddRegister from '@/components/in/AddRegister'
+import Schedule from '@/components/in/Schedule'
+import Import from '@/components/in/Import'
+import Edc from '@/components/in/Edc'
 import System from '@/components/System'
 import User from '@/components/system/User'
 import Role from '@/components/system/Role'
@@ -46,7 +50,8 @@ export default new Router({
         },
         {
           path: 'register',
-          component: Register
+          component: Register,
+
         },
         {
           path: 'sampling',
@@ -70,7 +75,26 @@ export default new Router({
         },
         {
           path: 'registerNew',
-          component: RegisterNew
+          component: RegisterNew,
+          children: [
+            {
+              path: '',
+              component: AddRegister
+            },{
+              path: 'addRegister',
+              component: AddRegister
+            },{
+              path: 'schedule',
+              component: Schedule
+            },{
+              path: 'import',
+              component: Import
+            },{
+              path: 'edc',
+              component: Edc
+            }
+
+          ]
         }
       ]
     }

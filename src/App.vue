@@ -47,7 +47,7 @@
           <li class="dropdown">
                 <a href="#" class="dropdown-toggle my-dropdown-menu" data-toggle="dropdown">系统菜单<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li v-for="menu in sysmenu"><a :href="menu.url">{{menu.text}}</a></li>
+                  <li v-for="menu in sysmenu"><a style="color:black;" :href="menu.url">{{menu.text}}</a></li>
                 </ul>
               </li>
         </ul>
@@ -107,7 +107,7 @@ export default {
         },
         {
           text: '项目配置',
-          url: '/ss'
+          url: '#ss'
         },
         {
           text: '出库管理',

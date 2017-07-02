@@ -24,6 +24,7 @@ require("./assets/libs/bootstrap-table/bootstrap-table.min.css")
 require("./assets/libs/bootstrap-table/bootstrap-table.min.js")
 require("./assets/libs/bootstrap-table/bootstrap-table-zh-CN.min.js")
 
+window.Hub = new Vue();
 
 Vue.config.productionTip = false
 
