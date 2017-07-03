@@ -23,14 +23,14 @@ export default {
     return {
       steps: [
         {
-          text: '出库预约',
-          url: '#out/book',
-          className: 'active'
-        },
-        {
           text: '库存查询',
           url: '#out/requiry',
            className: ''
+        },
+        {
+          text: '出库预约',
+          url: '#out/book',
+          className: 'active'
         },
         {
           text: '出库确认',

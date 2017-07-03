@@ -1,1 +1,1 @@
-window.commonUrl = "http://localhost:8080/";
+window.commonUrl = "http://localhost:8080";
