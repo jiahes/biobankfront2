@@ -2,7 +2,6 @@
   <div class="in content-wrapper">
     <div class="menu-box" style="background-color: #222d32">
       <ul class="sidebar-menu">
-        <li class="header">出库管理</li>
         <li v-for="step in steps">
           <a :href="step.url">
             <i class="fa fa-circle-o text-green"></i> 
@@ -25,19 +24,23 @@ export default {
       steps: [
         {
           text: '出库预约',
-          url: '#out/book'
+          url: '#out/book',
+          className: 'active'
         },
         {
           text: '库存查询',
-          url: '#out/requiry'
+          url: '#out/requiry',
+           className: ''
         },
         {
           text: '出库确认',
-          url: '#out/definite'
+          url: '#out/definite',
+          className: ''
         },
         {
           text: '出库查询',
-          url: '#out/inquiry'
+          url: '#out/inquiry',
+          className: ''
         }
       ]
     }

@@ -116,6 +116,9 @@ export default {
         {
           text: '系统管理',
           url: '#system'
+        },{
+          text: '出库质控',
+          url: '#outputControl'
         }
       ]
     }
