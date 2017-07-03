@@ -19,7 +19,7 @@ export default {
 <style scoped>
   .accept{
     position: absolute;
-    left: 200px;
+    left: 0;
     right: 0;
     top: 0;
     bottom: 0;

@@ -1,19 +1,12 @@
 <template>
-  <div class="registerNew">
-    <table-left></table-left>
-    <table-right></table-right>
+  <div class="edc">
+    edc
   </div>
 </template>
 
 <script>
-import tableLeft from "./TableLeft.vue";
-import tableRight from "./TableRight.vue";
 export default {
-  name: 'registerNew',
-  components: {
-    tableLeft,
-    tableRight
-  },
+  name: 'edc',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -24,7 +17,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .registerNew{
+  .edc{
     position: absolute;
     left: 0;
     right: 0;
