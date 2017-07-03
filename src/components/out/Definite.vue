@@ -9,10 +9,10 @@
             <input type="text" class="" style="height: 30px;width:75px;" @click="openByDrop4($event)" v-model="calendar4.display" readonly>
           </div>
           <div class="pull-left">
-           <button class="btn btn-success addDisease btn-sm pull-left">查询</button>
+           <button class="btn btn-success addDisease btn-sm">查询</button>
            </div>
            <div class="pull-left">
-           <button class="btn btn-success addDisease btn-sm pull-left">导出excel</button>
+           <button class="btn btn-success addDisease btn-sm ">导出excel</button>
            </div>
       <!-- </div> -->
     </div>

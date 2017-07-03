@@ -1,12 +1,6 @@
 <template>
   <div class="register">
     <div id="toolbar" style="">
-          <div style="width: 250px;margin: 0 5px 0 5px;" class="pull-left">
-            <label for="data" class="">日期：</label>
-            <input type="text" class="" style="height: 30px;width:75px;" @click="openByDrop3($event)" v-model="calendar3.display" readonly>-
-            <input type="text" class="" style="height: 30px;width:75px;" @click="openByDrop4($event)" v-model="calendar4.display" readonly>
-          </div>
-           <button class="btn btn-success addDisease btn-sm pull-left">查询</button>
            <button class="btn btn-success addDisease btn-sm pull-left">(1)附加排序</button>
            <button class="btn btn-success addDisease btn-sm pull-left">(2)修改出库量</button>
            <button class="btn btn-success addDisease btn-sm pull-left">清空出库预约</button>
@@ -14,17 +8,6 @@
       <!-- </div> -->
     </div>
     
-    <transition name="fade">
-    <div class="calendar-dropdown" :style="{'left':calendar3.left+'px','top':calendar3.top+'px'}" v-if="calendar3.show">
-        <calendar :zero="calendar3.zero" :lunar="calendar3.lunar" :value="calendar3.value" :begin="calendar3.begin" :end="calendar3.end" @select="calendar3.select"></calendar>
-    </div>
-    </transition>
-
-    <transition name="fade">
-    <div class="calendar-dropdown" :style="{'left':calendar4.left+'px','top':calendar4.top+'px'}" v-if="calendar4.show">
-        <calendar :zero="calendar4.zero" :lunar="calendar4.lunar" :value="calendar4.value" :begin="calendar4.begin" :end="calendar4.end" @select="calendar4.select"></calendar>
-    </div>
-    </transition>
 
     <table id="tb_departments"></table>
   </div>
@@ -144,39 +127,11 @@ var TableInit = function () {
     }
     return oTableInit;
 };
-import calendar from "../plugins/calendar.vue"
 export default {
   name: 'hello',
-  components: {
-    calendar
-  },
   data () {
     return {
         msg: 'Welcome to Your Vue.js App',
-        calendar3:{
-            display:"2018/02/16",
-            show:false,
-            zero:true,
-            value:[2018,2,16], //默认日期
-            lunar:true, //显示农历
-            select:(value)=>{
-                this.calendar3.show=false;
-                this.calendar3.value=value;
-                this.calendar3.display=value.join("/");
-            }
-        },
-        calendar4:{
-            display:"2018/02/17",
-            show:false,
-            zero:true,
-            value:[2018,2,17], //默认日期
-            lunar:true, //显示农历
-            select:(value)=>{
-                this.calendar4.show=false;
-                this.calendar4.value=value;
-                this.calendar4.display=value.join("/");
-            }
-        }
     }
   },
   mounted () {
@@ -192,34 +147,6 @@ export default {
     });
 
   },
-  methods: {
-    openByDrop3(e){
-            this.calendar3.show=true;
-            this.calendar3.left=e.target.offsetLeft+19;
-            this.calendar3.top=e.target.offsetTop+70;
-           
-            e.stopPropagation();
-            window.setTimeout(()=>{
-                document.addEventListener("click",(e)=>{
-                    this.calendar3.show=false;
-                    document.removeEventListener("click",()=>{},false);
-                },false);
-            },1000)
-        },
-    openByDrop4(e){
-            this.calendar4.show=true;
-            this.calendar4.left=e.target.offsetLeft+19;
-            this.calendar4.top=e.target.offsetTop+70;
-           
-            e.stopPropagation();
-            window.setTimeout(()=>{
-                document.addEventListener("click",(e)=>{
-                    this.calendar4.show=false;
-                    document.removeEventListener("click",()=>{},false);
-                },false);
-            },1000)
-        },
-  }
 }
 </script>
 
@@ -233,31 +160,4 @@ export default {
     bottom: 0;
     padding: 0 5px 0 5px;
   }
-  /*下拉框*/
-.calendar-dropdown{
-    background: #fff;
-    position: absolute;
-    left:0;
-    top:0;
-    padding:20px;
-    border: 1px solid #eee;
-    border-radius: 2px;
-    z-index: 999;
-}
-.calendar-dropdown:before {
-    position: absolute;
-    left:30px;
-    top: -10px;
-    content: "";
-    border:5px solid rgba(0, 0, 0, 0);
-    border-bottom-color: #DEDEDE;
-}
-.calendar-dropdown:after {
-    position: absolute;
-    left:30px;
-    top: -9px;
-    content: "";
-    border:5px solid rgba(0, 0, 0, 0);
-    border-bottom-color: #fff;
-}
 </style>

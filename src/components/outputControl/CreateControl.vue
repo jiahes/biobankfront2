@@ -1,13 +1,31 @@
 <template>
   <div class="register">
     <div id="toolbar" style="">
-          <div style="width: 250px;margin: 0 5px 0 5px;" class="pull-left">
-            <label for="data" class="">日期：</label>
-            <input type="text" class="" style="height: 30px;width:75px;" @click="openByDrop3($event)" v-model="calendar3.display" readonly>-
-            <input type="text" class="" style="height: 30px;width:75px;" @click="openByDrop4($event)" v-model="calendar4.display" readonly>
+    	<div style="width: 200px;margin: 0 5px 0 5px;" class="pull-left">
+            <label for="projects" class="">研究项目：</label>
+            <select name="" id="projects" placeholder="请选择研究项目">
+              <option value="全部研究项目">全部研究项目</option>
+              <option value="全部研究项目">全部研究项目</option>
+              <option value="全部研究项目">全部研究项目</option>
+            </select>
           </div>
-           <button class="btn btn-success addDisease btn-sm pull-left">查询</button>
-           <button class="btn btn-success addDisease btn-sm pull-left">导出excel</button>
+          <div style="width: 200px;margin: 0 5px 0 5px;" class="pull-left">
+            <label for="projects" class="">样本类型：</label>
+            <select name="" id="projects" placeholder="请选择样本类型">
+              <option value="样本类型">样本类型</option>
+              <option value="样本类型">样本类型</option>
+              <option value="样本类型">样本类型</option>
+            </select>
+          </div>
+          <div style="width: 200px;margin: 0 5px 0 5px;" class="pull-left">
+            <label for="data" class="">日期：</label>
+            <input type="text" class="" style="height: 30px;width:70px;" @click="openByDrop3($event)" v-model="calendar3.display" readonly>-
+            <input type="text" class="" style="height: 30px;width:70px;" @click="openByDrop4($event)" v-model="calendar4.display" readonly>
+          </div>
+           	 随机筛选数目：<input type="text" class="" style="height: 30px;width:70px; ">
+           <button class="btn btn-success addDisease btn-sm ">筛选</button>
+           <button class="btn btn-success addDisease btn-sm">修改出库量</button>
+      		<button class="btn btn-success addDisease btn-sm">创建质控单</button>
       <!-- </div> -->
     </div>
     
@@ -246,4 +264,5 @@ export default {
     border:5px solid rgba(0, 0, 0, 0);
     border-bottom-color: #fff;
 }
+
 </style>

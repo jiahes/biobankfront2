@@ -4,9 +4,9 @@ import Hello from '@/components/Hello'
 import Index from '@/components/Index'
 import In from '@/components/In'
 import Out from '@/components/Out'
+import Inquiry from '@/components/out/Inquiry'
 import Book from '@/components/out/Book'
 import Definite from '@/components/out/Definite'
-import Inquiry from '@/components/out/Inquiry'
 import Requiry from '@/components/out/Requiry'
 import Platform from '@/components/Platform'
 import Register from '@/components/in/Register'
@@ -114,6 +114,10 @@ export default new Router({
         name: 'out',
         component: Out,
         children: [
+        	{
+        		path: 'inquiry',
+        		component: Inquiry
+        	},
           {
             path: 'book',
             component:Book
@@ -121,10 +125,6 @@ export default new Router({
           {
             path: 'definite',
             component: Definite
-          },
-          {
-            path: 'inquiry',
-            component: Inquiry
           },
           {
               path: 'requiry',
