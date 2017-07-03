@@ -24,6 +24,12 @@ import System from '@/components/System'
 import User from '@/components/system/User'
 import Role from '@/components/system/Role'
 import Authority from '@/components/system/Authority'
+import OutputControl from '@/components/OutputControl'
+import CreateControl from '@/components/outputControl/CreateControl'
+import OutputDefinite from '@/components/outputControl/OutputDefinite'
+import OutputExact from '@/components/outputControl/OutputExact'
+import DataImport from '@/components/outputControl/DataImport'
+import ControlRecord from '@/components/outputControl/ControlRecord'
 
 Vue.use(Router)
 
@@ -143,6 +149,31 @@ export default new Router({
             {
               path: 'authority',
               component: Authority
+            }
+          ]
+        },
+      {
+          path: '/outputControl',
+          name: 'outputControl',
+          component: OutputControl,
+          children: [
+            {
+              path: 'createControl',
+              component: CreateControl
+            },
+            {
+              path: 'outputDefinite',
+              component:OutputDefinite
+            },
+            {
+              path: 'outputExact',
+              component: OutputExact
+            },{
+              path: 'dataImport',
+              component: DataImport
+            },{
+              path: 'controlRecord',
+              component: ControlRecord
             }
           ]
         }

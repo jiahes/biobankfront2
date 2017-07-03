@@ -2,7 +2,7 @@
   <div class="register">
     <div id="toolbar" style="">
       <!-- <div class="col-xs-4"> -->
-          <button class="btn btn-success addDisease btn-sm pull-left" @click="goNew();">新增登记</button>
+          <button class="btn btn-success addDisease btn-sm pull-left">新增登记</button>
       <!-- </div> -->
       <!-- <div class="col-xs-4"> -->
           <div style="width: 190px;margin: 0 5px 0 5px;" class="pull-left">

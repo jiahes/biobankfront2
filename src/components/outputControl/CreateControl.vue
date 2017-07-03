@@ -7,10 +7,7 @@
             <input type="text" class="" style="height: 30px;width:75px;" @click="openByDrop4($event)" v-model="calendar4.display" readonly>
           </div>
            <button class="btn btn-success addDisease btn-sm pull-left">查询</button>
-           <button class="btn btn-success addDisease btn-sm pull-left">(1)附加排序</button>
-           <button class="btn btn-success addDisease btn-sm pull-left">(2)修改出库量</button>
-           <button class="btn btn-success addDisease btn-sm pull-left">清空出库预约</button>
-           <button class="btn btn-success addDisease btn-sm pull-left">生成出库预约单</button>
+           <button class="btn btn-success addDisease btn-sm pull-left">导出excel</button>
       <!-- </div> -->
     </div>
     
@@ -66,46 +63,35 @@ var TableInit = function () {
                 title: '序号'
             }, {
                 field: 'disease_english_name',
-                title: '课题'
+                title: '出库单号'
             }, {
                 field: 'disease_english_name2',
-                title: '编码'
+                title: '课题项目'
             }, {
                 field: 'disease_chinese_name',
-                title: '名称'
+                title: '出库说明'
             }, {
                 field: 'disease_chinese_name2',
-                title: '库存量'
+                title: '申请人'
             }, {
                 field: 'genetic_model',
-                title: '出库量'
+                title: '批准人'
             }, {
                 field: 'disease_type',
-                title: '存储位置'
+                title: '出库日期'
             }, {
                 field: 'disease_other_name',
-                title: '冻融'
+                title: '出库人'
             }, {
                 field: '',
-                title: '索引'
+                title: '样本数'
             }, {
                 field: '',
-                title: '姓名'
+                title: '状态'
             },{
                 field: '',
-                title: '性别'
-            },{
-                field: '',
-                title: '年龄'
-            },{
-                field: '',
-                title: '诊断'
-            },{
-                field: 'operate',
-                title: '操作',
-                events: operateEvents,
-                formatter: oTableInit.operateFormatter
-            }
+                title: '查看'
+                }
             ]
         });
     };
