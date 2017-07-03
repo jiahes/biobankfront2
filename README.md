@@ -1,7 +1,7 @@
 # biobankfront
 
 > 样本库管理系统前端页面
-> 所用技术：vue adminlte bootstrap jquery bootstrap-table 
+> 所用技术：vue adminlte bootstrap jquery bootstrap-table vue-calendar 
 
 ## Build Setup
 
