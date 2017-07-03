@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import _ from "lodash"
 export default {
   name: 'in',
   data () {
@@ -25,32 +26,32 @@ export default {
       steps: [
         {
           text: '登记',
-          url: '#in/register',
+          url: '#/in/register',
           className: 'active'
         },
         {
           text: '采样',
-          url: '#in/sampling',
+          url: '#/in/sampling',
           className: ''
         },
         {
           text: '送存',
-          url: '#in/send',
+          url: '#/in/send',
           className: ''
         },
         {
           text: '接受',
-          url: '#in/accept',
+          url: '#/in/accept',
           className: ''
         },
         {
           text: '处理',
-          url: '#in/handle',
+          url: '#/in/handle',
           className: ''
         },
         {
           text: '入库',
-          url: '#in/save',
+          url: '#/in/save',
           className: ''
         }
       ]
@@ -64,6 +65,19 @@ export default {
       }
       this.steps[index].className = "active";
     }
+  },
+  created() {
+    console.log(window.location.href);
+    var href = window.location.href;
+    var hash = href.match(/#.*/)[0];
+    var index = _.findIndex(this.steps, function(step) {
+      return step.url == hash;
+    });
+    for(let i = 0; i < this.steps.length; i++) {
+      this.steps[i].className = "";
+    }
+    this.steps[index].className = "active";
+
   }
 }
 </script>

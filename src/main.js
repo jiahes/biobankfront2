@@ -24,6 +24,10 @@ require("./assets/libs/bootstrap-table/bootstrap-table.min.css")
 require("./assets/libs/bootstrap-table/bootstrap-table.min.js")
 require("./assets/libs/bootstrap-table/bootstrap-table-zh-CN.min.js")
 
+//全局引入table-export以及bootstrap-table的文件
+require("./assets/libs/table-export/tableExport.min.js")
+require("./assets/libs/table-export/bootstrap-table-export.js")
+
 window.Hub = new Vue();
 
 Vue.config.productionTip = false

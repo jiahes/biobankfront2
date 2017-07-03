@@ -37,8 +37,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
-      component: Index
+      redirect: '/index'
     },
     {
       path: '/index',
@@ -52,7 +51,7 @@ export default new Router({
       children: [
         {
           path: '',
-          component: Register
+          redirect: 'register'
         },
         {
           path: 'register',

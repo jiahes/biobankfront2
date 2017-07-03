@@ -7,7 +7,7 @@
       <!-- <div class="col-xs-4"> -->
           <div style="width: 190px;margin: 0 5px 0 5px;" class="pull-left">
             <div class="input-group input-group-sm" style="">
-              <input type="text" class="form-control" placeholder="请输入检索关键字">
+              <input type="text" id="searchInput" class="form-control" placeholder="请输入检索关键字">
               <span class="input-group-btn" style="top: -2px;">
                 <button class="btn btn-default" type="button">搜索</button>
               </span>
@@ -15,9 +15,9 @@
           </div>
           <div style="width: 120px;margin: 0 5px 0 5px;" class="pull-left">
             <label for="all" class="">全部</label>
-            <input type="radio" id="all">
+            <input type="radio" id="all" name="loginTime">
             <label for="today" class="">今日登记</label>
-            <input type="radio" id="today">
+            <input type="radio" id="today" name="loginTime">
           </div>
           <div style="width: 200px;margin: 0 5px 0 5px;" class="pull-left">
             <label for="projects" class="">选择项目：</label>
@@ -77,11 +77,14 @@ var TableInit = function () {
             minimumCountColumns: 2,             //最少允许的列数
             clickToSelect: false,                //是否启用点击选中行
                                     //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-            height:$('.register').height() - 50,
+            height: $('html').height() - 101,
             uniqueId: "ID",                     //每一行的唯一标识，一般为主键列
             showToggle:true,                    //是否显示详细视图和列表视图的切换按钮
             cardView: false,                    //是否显示详细视图
             detailView: false,                   //是否显示父子表
+            showExport: true,                     //是否显示导出
+            exportDataType: "basic",              //basic', 'all', 'selected'.
+            exportTypes: ['excel'],
             columns: [{
                 field: 'omin',
                 title: '序号'
@@ -159,6 +162,7 @@ var TableInit = function () {
     }
     return oTableInit;
 };
+
 import calendar from "../plugins/calendar.vue"
 export default {
   name: 'hello',
@@ -196,7 +200,7 @@ export default {
   },
   mounted () {
     var oTable = new TableInit();
-    oTable.Init();
+    oTable.Init($('.register').height());
     $("#searchInput").on('keyup', function(event) {
         if(event.keyCode==13) {
             refreshData();
@@ -249,6 +253,7 @@ export default {
     top: 0;
     bottom: 0;
     padding: 0 5px 0 5px;
+    overflow: auto;
   }
   /*下拉框*/
 .calendar-dropdown{

@@ -2,7 +2,7 @@
   <div class="tableRight">
     <ul class="nav nav-tabs" id="myTabs">
       <li role="presentation" class="active"><a href="#in/registerNew/addRegister">1.新增登记</a></li>
-      <li role="presentation"><a href="#in/registerNew/schedule">2.手术排班表</a></li>
+      <li role="presentation"><a href="#in/regi sterNew/schedule">2.手术排班表</a></li>
       <li role="presentation"><a href="#in/registerNew/import">3.导入数据</a></li>
       <li role="presentation"><a href="#in/registerNew/edc">4.EDC数据</a></li>
     </ul>
