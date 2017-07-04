@@ -5,6 +5,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Dialog from 'hsy-vue-dialog'
+
+Vue.use(Dialog)
 
 //全局引入bootstrap以及adminlte的样式文件
 require("./assets/libs/bootstrap/css/bootstrap.min.css")

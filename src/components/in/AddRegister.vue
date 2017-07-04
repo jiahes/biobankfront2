@@ -23,16 +23,16 @@
             <div class="form-group form-group-sm">
               <label for="inputEmail3" class="col-sm-3 control-label">姓名</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+                <input type="text" @blur="getPinyin();" class="form-control" id="inputEmail3" placeholder="姓名" v-model="name">
               </div>
             </div>
             <div class="form-group form-group-sm">
               <label for="inputPassword3" class="col-sm-3 control-label">拼音码</label>
               <div class="col-sm-4">
-                <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                <input type="text" v-model="initials" class="form-control" id="inputPassword3" placeholder="">
               </div>
               <div class="col-sm-4">
-                <input type="text" class="form-control" id="inputPassword3" placeholder="">
+                <input type="text" v-model="pinyin" class="form-control" id="inputPassword3" placeholder="">
               </div>
             </div>
             <div class="form-group form-group-sm">
@@ -121,6 +121,7 @@
 </template>
 
 <script>
+import pinyin from '../../assets/libs/pinyin/pinyin.js'
 export default {
   name: 'addRegister',
   methods:{
@@ -135,11 +136,22 @@ export default {
         name: '王五',
         project: 'TTT'
       });
+    },
+    getPinyin: function() {
+      console.log(pinyin);
+      console.log(this.name);
+      console.log(pinyin.getFullChars(this.name).toUpperCase());
+      console.log(pinyin.getCamelChars(this.name));
+      this.pinyin = pinyin.getFullChars(this.name).toUpperCase();
+      this.initials = pinyin.getCamelChars(this.name);
     }
   },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      name: '',
+      initials: '',
+      pinyin: '',
       items: [
         {
           title: '研究项目',

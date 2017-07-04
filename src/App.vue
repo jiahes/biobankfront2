@@ -73,13 +73,18 @@
     <!-- Default to the left -->
     <strong>Copyright &copy; 2016 <a href="#">北京嘉和美康信息技术有限公司</a>.</strong> All rights reserved.
   </footer>
+  <alert></alert>
 </div>
 
 </template>
 
 <script>
+import alert from "./components/plugins/alert.vue"
 export default {
   name: 'app',
+  components: {
+    alert
+  },
   data() {
     return {
       menus: [

@@ -8,7 +8,7 @@
             <option value="全部研究项目">全部研究项目2</option>
             <option value="全部研究项目">全部研究项目3</option>
           </select>
-          <button class="btn btn-primary btn-sm">标本采集</button>
+          <button class="btn btn-primary btn-sm" @click="sampl();">标本采集</button>
         </div>
         <div style="width: 120px;margin: 0 5px 0 5px;" class="pull-left">
           <label for="all" class="">全部</label>
@@ -33,6 +33,51 @@
         </div>
     </div>
     <table id="tb_departments"></table>
+    <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><b>内分泌科研究项目</b>标本采集方案</h4>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>编号</th>
+                    <th>名称</th>
+                    <th>采集量</th>
+                    <th>采集数</th>
+                    <th>采集部位</th>
+                    <th>采集描述</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>C03</td>
+                    <td>静脉血（EDA）</td>
+                    <td><input type="text"> ml</td>
+                    <td><input type="text"></td>
+                    <td>
+                        <select name="" id="">
+                            <option value=""></option>
+                        </select>
+                        <select name="" id="">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -154,7 +199,8 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      hasSelected: true
     }
   },
   mounted () {
@@ -166,6 +212,16 @@ export default {
         }
     });
 
+  },
+  methods: {
+    sampl() {
+        if(this.hasSelected) {
+            $('#myModal').modal();
+        } else {
+            Hub.$emit("alert", "请选择要采集的对象");
+        }
+        
+    }
   }
 }
 </script>
