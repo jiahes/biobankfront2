@@ -145,11 +145,12 @@ export default {
 <style scoped>
   .register{
     position: absolute;
-    left: 200px;
+    left: 0px;
     right: 0;
     top: 0;
     bottom: 0;
     padding: 0 5px 0 5px;
+    overflow: auto;
   }
  
 </style>

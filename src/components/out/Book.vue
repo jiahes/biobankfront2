@@ -1,10 +1,10 @@
 <template>
   <div class="register">
     <div id="toolbar" style="">
-           <button class="btn btn-success addDisease btn-sm pull-left">(1)附加排序</button>
-           <button class="btn btn-success addDisease btn-sm pull-left">(2)修改出库量</button>
-           <button class="btn btn-success addDisease btn-sm pull-left">清空出库预约</button>
-           <button class="btn btn-success addDisease btn-sm pull-left">生成出库预约单</button>
+           <button class="btn btn-success addDisease btn-sm ">(1)附加排序</button>
+           <button class="btn btn-success addDisease btn-sm ">(2)修改出库量</button>
+           <button class="btn btn-success addDisease btn-sm ">清空出库预约</button>
+           <button class="btn btn-success addDisease btn-sm ">生成出库预约单</button>
       <!-- </div> -->
     </div>
     
@@ -154,10 +154,11 @@ export default {
 <style scoped>
   .register{
     position: absolute;
-    left: 200px;
+    left: 0px;
     right: 0;
     top: 0;
     bottom: 0;
     padding: 0 5px 0 5px;
+    overflow: auto;
   }
 </style>

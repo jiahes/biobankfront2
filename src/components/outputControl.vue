@@ -2,7 +2,7 @@
   <div class="in content-wrapper">
     <div class="menu-box" style="background-color: #222d32">
       <ul class="sidebar-menu">
-        <li class="header">出库质控</li>
+        <li class="header">入库步骤</li>
         <li v-for="(step,index) in steps" :class="step.className">
           <a :href="step.url" @click="stepF(index);">
             <i class="fa fa-circle-o text-red"></i> 
@@ -11,13 +11,14 @@
         </li>
       </ul>
     </div>
-    <div class="">
+    <div class="content-tables">
       <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
+import _ from "lodash"
 export default {
   name: 'in',
   data () {
@@ -59,6 +60,19 @@ export default {
       }
       this.steps[index].className = "active";
     }
+  },
+  created() {
+    console.log(window.location.href);
+    var href = window.location.href;
+    var hash = href.match(/#.*/)[0];
+    var index = _.findIndex(this.steps, function(step) {
+      return step.url == hash;
+    });
+    for(let i = 0; i < this.steps.length; i++) {
+      this.steps[i].className = "";
+    }
+    this.steps[index].className = "active";
+
   }
 }
 </script>
@@ -73,10 +87,17 @@ export default {
     right: 0;
   }
   .menu-box{
-    width: 200px;
+    width: 100px;
     position: absolute;
     top: 0px;
     bottom: 0;
     background-color: #222d32;
+  }
+  .content-tables{
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: 0;
+    right: 0;
   }
 </style>

@@ -6,8 +6,8 @@
             <input type="text" class="" style="height: 30px;width:75px;" @click="openByDrop3($event)" v-model="calendar3.display" readonly>-
             <input type="text" class="" style="height: 30px;width:75px;" @click="openByDrop4($event)" v-model="calendar4.display" readonly>
           </div>
-           <button class="btn btn-success addDisease btn-sm pull-left">查询</button>
-           <button class="btn btn-success addDisease btn-sm pull-left">导出excel</button>
+           <button class="btn btn-success addDisease btn-sm">查询</button>
+           <button class="btn btn-success addDisease btn-sm">导出excel</button>
       <!-- </div> -->
     </div>
     
@@ -213,11 +213,12 @@ export default {
 <style scoped>
   .register{
     position: absolute;
-    left: 200px;
+    left: 0px;
     right: 0;
     top: 0;
     bottom: 0;
     padding: 0 5px 0 5px;
+    overflow: auto;
   }
   /*下拉框*/
 .calendar-dropdown{
