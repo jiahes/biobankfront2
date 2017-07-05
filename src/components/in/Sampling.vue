@@ -200,7 +200,15 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      hasSelected: true
+      hasSelected: true,
+      body: {
+        "循环系统": ["静脉"],
+        "运动系统": ["骨髓"],
+        "消化系统": ["胃","食管","肝脏","胰腺"],
+        "呼吸系统": ["肺","气管","支气管"],
+        "泌尿系统": ["肾","膀胱","输尿管"],
+        "淋巴系统": ["淋巴导管","淋巴结"]
+      }
     }
   },
   mounted () {
